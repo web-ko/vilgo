@@ -1,7 +1,7 @@
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
+* PostCSS: v8.5.15,
+* Autoprefixer: v10.5.0
 * Browsers: last 4 version
 */
 
@@ -20,7 +20,8 @@ body{
     visibility: hidden;
     
     font-family: "ogilvysansregular", "ogilvysanslight", "ogilvysansregularitalic", "ogilvyserifregular", "ogilvyserifbold", "ogilvyserifregularitalic";
-    animation: load .25s .25s both;
+    -webkit-animation: load .25s .25s both;
+            animation: load .25s .25s both;
 }
 @-webkit-keyframes load{
     0%{
@@ -88,14 +89,12 @@ a:hover {
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     -webkit-transition: color .3s ease-in-out;
-    -o-transition: color .3s ease-in-out;
     transition: color .3s ease-in-out;
     z-index: 10;
 }
 .branding svg{
     width: 145px;
     -webkit-transition: 0s;
-    -o-transition: 0s;
     transition: 0s;
 }
 .branding svg g{
@@ -231,7 +230,6 @@ footer p{
         text-transform: none;
         white-space: nowrap;
         -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
         transition: 0.3s;
         position: relative;
     }
@@ -246,7 +244,6 @@ footer p{
         visibility: hidden;
         width: 0px;
         -webkit-transition: all 0.3s ease-in-out 0s;
-        -o-transition: all 0.3s ease-in-out 0s;
         transition: all 0.3s ease-in-out 0s;
     }
 
@@ -263,7 +260,6 @@ footer p{
     footer .footer-right-nav li.social-list {
         width: 71px;
         -webkit-transition: all 0.5s 0.5s ease-in-out;
-        -o-transition: all 0.5s 0.5s ease-in-out;
         transition: all 0.5s 0.5s ease-in-out;
         padding-right: 0;
         background: #fff;
@@ -271,27 +267,22 @@ footer p{
     .footer-right-nav li.social-list ul li span.is__active, .footer-right-nav li.Language-list ul li span.is__active {
         opacity: 1;
         -webkit-transition: 0.5s all ease-in-out;
-        -o-transition: 0.5s all ease-in-out;
         transition: 0.5s all ease-in-out;
     }
     li.social-list ul li span.is__active:nth-child(1){
         -webkit-transition: .5s .2s all ease-in-out;
-        -o-transition: .5s .2s all ease-in-out;
         transition: .5s .2s all ease-in-out;
     }
     li.social-list ul li span.is__active:nth-child(2){
         -webkit-transition: .5s .4s all ease-in-out;
-        -o-transition: .5s .4s all ease-in-out;
         transition: .5s .4s all ease-in-out;
     }
     li.social-list ul li span.is__active:nth-child(3){
         -webkit-transition: .5s .6s all ease-in-out;
-        -o-transition: .5s .6s all ease-in-out;
         transition: .5s .6s all ease-in-out;
     }
     li.social-list ul li span.is__active:nth-child(4){
         -webkit-transition: .5s .8s all ease-in-out;
-        -o-transition: .5s .8s all ease-in-out;
         transition: .5s .8s all ease-in-out;
     }
     footer .footer-right-nav li.country-list {
@@ -299,7 +290,6 @@ footer p{
         background: #fff;
         padding-left: 19px;
         -webkit-transition:  all 0.3s 0.5s ease-in-out;
-        -o-transition:  all 0.3s 0.5s ease-in-out;
         transition:  all 0.3s 0.5s ease-in-out;
         overflow: hidden;
     }
@@ -307,7 +297,6 @@ footer p{
         width: 227px;
         padding: 20px 0px 0 20px;
         -webkit-transition:  all 0.3s ease-in-out;
-        -o-transition:  all 0.3s ease-in-out;
         transition:  all 0.3s ease-in-out;
         overflow-x: hidden;
     }
@@ -315,7 +304,6 @@ footer p{
         display: block!important;
         /*width: 227px!important;*/
         -webkit-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         height: 0;
         /*overflow: hidden;*/
@@ -324,7 +312,6 @@ footer p{
         display: block;
         width: 227px;
         -webkit-transition: all 0.3s 0.5s ease-in-out;
-        -o-transition: all 0.3s 0.5s ease-in-out;
         transition: all 0.3s 0.5s ease-in-out;
         height: 224px;
         /*overflow: hidden;*/
@@ -343,7 +330,6 @@ footer p{
         position: fixed;
         inset: 0;
         -webkit-transition: .3s;
-        -o-transition: .3s;
         transition: .3s;
     }
     .navbar_overlay.show {
@@ -353,7 +339,6 @@ footer p{
         background: rgba(0, 0, 0, 0.6);
         z-index: 9996;
         -webkit-transition: .3s;
-        -o-transition: .3s;
         transition: .3s;
     }
     .mobile-nav-show {
@@ -363,7 +348,6 @@ footer p{
         cursor: pointer;
         line-height: 0;
         -webkit-transition: 0.5s;
-        -o-transition: 0.5s;
         transition: 0.5s;
         z-index: 9999;
         padding-right: 10px;
@@ -376,7 +360,6 @@ footer p{
         background: rgb(255 255 255 / 100%);
         overflow-y: auto;
         -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
         transition: 0.3s;
         z-index: 9998;
     }
@@ -401,7 +384,6 @@ footer p{
         white-space: nowrap;
         text-transform: uppercase;
         -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
         transition: 0.3s;
     }
     .mobile-nav-hide {
@@ -410,7 +392,6 @@ footer p{
         cursor: pointer;
         line-height: 0;
         -webkit-transition: 0.5s;
-        -o-transition: 0.5s;
         transition: 0.5s;
         position: fixed;
         right: 20px;
@@ -432,7 +413,6 @@ footer p{
     footer .footer-right-nav li.social-list {
         width: 71px;
         -webkit-transition: all 0.5s 0.5s ease-in-out;
-        -o-transition: all 0.5s 0.5s ease-in-out;
         transition: all 0.5s 0.5s ease-in-out;
         padding-right: 0;
         background: #fff;
@@ -440,27 +420,22 @@ footer p{
     .footer-right-nav li.social-list ul li span.is__active, .footer-right-nav li.Language-list ul li span.is__active {
         opacity: 1;
         -webkit-transition: .5s all ease-in-out;
-        -o-transition: .5s all ease-in-out;
         transition: .5s all ease-in-out;
     }
     li.social-list ul li span.is__active:nth-child(1){
         -webkit-transition: .5s .2s all ease-in-out;
-        -o-transition: .5s .2s all ease-in-out;
         transition: .5s .2s all ease-in-out;
     }
     li.social-list ul li span.is__active:nth-child(2){
         -webkit-transition: .5s .4s all ease-in-out;
-        -o-transition: .5s .4s all ease-in-out;
         transition: .5s .4s all ease-in-out;
     }
     li.social-list ul li span.is__active:nth-child(3){
         -webkit-transition: .5s .6s all ease-in-out;
-        -o-transition: .5s .6s all ease-in-out;
         transition: .5s .6s all ease-in-out;
     }
     li.social-list ul li span.is__active:nth-child(4){
         -webkit-transition: .5s .8s all ease-in-out;
-        -o-transition: .5s .8s all ease-in-out;
         transition: .5s .8s all ease-in-out;
     }
     footer .footer-right-nav li.country-list {
@@ -468,7 +443,6 @@ footer p{
         background: #fff;
         /*padding-left: 19px;*/
         -webkit-transition:  all 0.3s 0.5s ease-in-out;
-        -o-transition:  all 0.3s 0.5s ease-in-out;
         transition:  all 0.3s 0.5s ease-in-out;
         overflow-x: hidden;
     }
@@ -477,7 +451,6 @@ footer p{
         width: 80vw;
         /*padding: 20px 0px 0 20px;*/
         -webkit-transition:  all 0.3s ease-in-out;
-        -o-transition:  all 0.3s ease-in-out;
         transition:  all 0.3s ease-in-out;
         overflow-x: hidden;
     }
@@ -486,7 +459,6 @@ footer p{
         display: block!important;
         /*width:90px;*/
         -webkit-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         height: 0;;
         /*overflow: hidden;*/
@@ -494,7 +466,6 @@ footer p{
     .Country-list.open{
         /*width: 100%;*/
         -webkit-transition: all 0.3s 0.5s ease-in-out;
-        -o-transition: all 0.3s 0.5s ease-in-out;
         transition: all 0.3s 0.5s ease-in-out;
         height: 53px;
         /*padding-bottom: 53px;*/
@@ -731,7 +702,6 @@ footer p{
             justify-content: right;
     z-index: 11;
     -webkit-transition: all .4s linear;
-    -o-transition: all .4s linear;
     transition: all .4s linear;
 }
 .trigger-icon{
@@ -755,7 +725,6 @@ footer p{
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
     -webkit-transition: all .4s linear;
-    -o-transition: all .4s linear;
     transition: all .4s linear;
 }
 .trigger-icon.scrolled{
@@ -845,13 +814,39 @@ footer p{
 
 
 .carousel_slider {
-    position: fixed;
+    /*position: fixed;*/
+    position: relative;
     margin-top: 4.5rem;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+.embla__container {
+  display: -ms-grid !important;
+  display: grid !important;
+  -ms-grid-rows: auto 0px auto 0px auto 0px auto;
+  grid-template-rows: repeat(4, auto); /* ზუსტად 4 მწკრივი */
+  grid-auto-flow: column; /* ელემენტები ეწყობა სვეტებად (კარუსელისთვის) */
+  gap: 0px; /* მწკრივებსა და სლაიდებს შორის დაშორება */
+}
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+.embla__slide {
+  /*flex: 0 0 350px;*/
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  min-width: 0;
+  position: relative;
+  /*margin-right: 20px;*/
 }
 .carousel_track {
     display: -webkit-box;
@@ -947,7 +942,6 @@ footer p{
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
     -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 .select2-selection--single::after {
@@ -983,7 +977,6 @@ footer p{
     border-radius: 0;
     -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-    -o-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
     -webkit-appearance: none;
@@ -1165,7 +1158,6 @@ select option {
 }
 .animated-text/*, #performance-cookies-id .animated-text*/{
     -webkit-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease; /* Controls the animation duration */
     opacity: 1;
 }
@@ -1199,3 +1191,11 @@ select option {
         --logo-scroll-margin: 50px;
     }
 }
+
+
+
+
+
+
+
+
