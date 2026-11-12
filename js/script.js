@@ -773,106 +773,106 @@ if (mediaQuery.matches) {
    // });
 
    // Final, without jump
-   document.addEventListener("DOMContentLoaded", function() {
-        const carouselSlider = document.querySelector('.carousel_slider');
-        const carouselTrack = document.querySelector('.carousel_track');
-        let isDragging = false;
-        let startX, currentX;
-        let animationId;
-        let speed = 0.4; // Adjust speed as needed
-        let isPaused = false;
+   // document.addEventListener("DOMContentLoaded", function() {
+   //      const carouselSlider = document.querySelector('.carousel_slider');
+   //      const carouselTrack = document.querySelector('.carousel_track');
+   //      let isDragging = false;
+   //      let startX, currentX;
+   //      let animationId;
+   //      let speed = 0.4; // Adjust speed as needed
+   //      let isPaused = false;
 
-        function startDrag(e) {
-            isDragging = true;
-            startX = e.pageX || e.touches[0].pageX;
-            currentX = startX;
-            cancelAnimationFrame(animationId);
-            carouselSlider.classList.add('disable-select');
+   //      function startDrag(e) {
+   //          isDragging = true;
+   //          startX = e.pageX || e.touches[0].pageX;
+   //          currentX = startX;
+   //          cancelAnimationFrame(animationId);
+   //          carouselSlider.classList.add('disable-select');
 
-            // Attach move and end listeners
-            document.addEventListener('mousemove', moveDrag);
-            document.addEventListener('touchmove', moveDrag);
-            document.addEventListener('mouseup', endDrag);
-            document.addEventListener('touchend', endDrag);
-        }
+   //          // Attach move and end listeners
+   //          document.addEventListener('mousemove', moveDrag);
+   //          document.addEventListener('touchmove', moveDrag);
+   //          document.addEventListener('mouseup', endDrag);
+   //          document.addEventListener('touchend', endDrag);
+   //      }
 
-        function endDrag() {
-            isDragging = false;
-            carouselSlider.classList.remove('disable-select');
+   //      function endDrag() {
+   //          isDragging = false;
+   //          carouselSlider.classList.remove('disable-select');
 
-            // Remove move and end listeners
-            document.removeEventListener('mousemove', moveDrag);
-            document.removeEventListener('touchmove', moveDrag);
-            document.removeEventListener('mouseup', endDrag);
-            document.removeEventListener('touchend', endDrag);
+   //          // Remove move and end listeners
+   //          document.removeEventListener('mousemove', moveDrag);
+   //          document.removeEventListener('touchmove', moveDrag);
+   //          document.removeEventListener('mouseup', endDrag);
+   //          document.removeEventListener('touchend', endDrag);
 
-            if (!isPaused) {
-                requestAnimationFrame(animate);
-            }
-        }
+   //          if (!isPaused) {
+   //              requestAnimationFrame(animate);
+   //          }
+   //      }
 
-        function moveDrag(e) {
-            if (!isDragging) return;
-            const newX = e.pageX || e.touches[0].pageX;
-            const diffX = newX - currentX;
-            currentX = newX;
+   //      function moveDrag(e) {
+   //          if (!isDragging) return;
+   //          const newX = e.pageX || e.touches[0].pageX;
+   //          const diffX = newX - currentX;
+   //          currentX = newX;
 
-            carouselTrack.style.transform = `translateX(${parseFloat(carouselTrack.style.transform.replace('translateX(', '').replace('px)', '')) + diffX}px)`;
-            handleInfiniteScroll();
-        }
+   //          carouselTrack.style.transform = `translateX(${parseFloat(carouselTrack.style.transform.replace('translateX(', '').replace('px)', '')) + diffX}px)`;
+   //          handleInfiniteScroll();
+   //      }
 
-        function handleInfiniteScroll() {
-            const trackRect = carouselTrack.getBoundingClientRect();
-            const trackWidth = trackRect.width;
-            let currentTranslateX = parseFloat(carouselTrack.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+   //      function handleInfiniteScroll() {
+   //          const trackRect = carouselTrack.getBoundingClientRect();
+   //          const trackWidth = trackRect.width;
+   //          let currentTranslateX = parseFloat(carouselTrack.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
 
-            if (currentTranslateX < -trackWidth / 2) {
-                currentTranslateX += trackWidth;
-            } else if (currentTranslateX > 0) {
-                currentTranslateX -= trackWidth / 2;
-            }
+   //          if (currentTranslateX < -trackWidth / 2) {
+   //              currentTranslateX += trackWidth;
+   //          } else if (currentTranslateX > 0) {
+   //              currentTranslateX -= trackWidth / 2;
+   //          }
 
-            carouselTrack.style.transform = `translateX(${currentTranslateX}px)`;
-        }
+   //          carouselTrack.style.transform = `translateX(${currentTranslateX}px)`;
+   //      }
 
-        function animate() {
-            if (isPaused || isDragging) return;
+   //      function animate() {
+   //          if (isPaused || isDragging) return;
 
-            let currentTranslateX = parseFloat(carouselTrack.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
-            currentTranslateX -= speed;
+   //          let currentTranslateX = parseFloat(carouselTrack.style.transform.replace('translateX(', '').replace('px)', '')) || 0;
+   //          currentTranslateX -= speed;
 
-            carouselTrack.style.transform = `translateX(${currentTranslateX}px)`;
-            handleInfiniteScroll();
+   //          carouselTrack.style.transform = `translateX(${currentTranslateX}px)`;
+   //          handleInfiniteScroll();
 
-            animationId = requestAnimationFrame(animate);
-        }
+   //          animationId = requestAnimationFrame(animate);
+   //      }
 
-        // Prevent images from interfering with dragging
-        const images = document.querySelectorAll('.carousel_slide img');
-        images.forEach(image => {
-            image.addEventListener('dragstart', function(e) {
-                e.preventDefault();
-            });
+   //      // Prevent images from interfering with dragging
+   //      const images = document.querySelectorAll('.carousel_slide img');
+   //      images.forEach(image => {
+   //          image.addEventListener('dragstart', function(e) {
+   //              e.preventDefault();
+   //          });
 
-            image.addEventListener('mouseenter', function() {
-                isPaused = true;
-                cancelAnimationFrame(animationId);
-            });
+   //          image.addEventListener('mouseenter', function() {
+   //              isPaused = true;
+   //              cancelAnimationFrame(animationId);
+   //          });
 
-            image.addEventListener('mouseleave', function() {
-                isPaused = false;
-                if (!isDragging) {
-                    requestAnimationFrame(animate);
-                }
-            });
-        });
+   //          image.addEventListener('mouseleave', function() {
+   //              isPaused = false;
+   //              if (!isDragging) {
+   //                  requestAnimationFrame(animate);
+   //              }
+   //          });
+   //      });
 
-        carouselSlider.addEventListener('mousedown', startDrag);
-        carouselSlider.addEventListener('touchstart', startDrag);
+   //      carouselSlider.addEventListener('mousedown', startDrag);
+   //      carouselSlider.addEventListener('touchstart', startDrag);
 
-        // Start the animation
-        requestAnimationFrame(animate);
-   });
+   //      // Start the animation
+   //      requestAnimationFrame(animate);
+   // });
    // End of Final, without jump
     // End of ჰოვერი და პაუზა მხოლოდ ფოტოზე
     // End of დრაგი ფოტოზეც მოქმედებს
@@ -1159,6 +1159,6 @@ function reloadPage() {
 // Direct Scroll to Section
 document.addEventListener("DOMContentLoaded", function() {
     document.body.style.visibility = "visible";
-    // document.getElementById("work").style.visibility = "visible";
+    // document.getElementById("header").style.visibility = "visible";
 // Rest of the scroll code here
 });
